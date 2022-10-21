@@ -17,6 +17,12 @@ jobs:
     needs: output-values
     uses: ./.github/workflows/inputs.yml
 
+  simple:
+    runs-on: ubuntu-latest
+    needs: use-inputs
+    steps:
+      - run: echo ${{ needs.output-values.outputs.randomString }} ${{ needs.use-inputs.outputs.reversedString }}
+
   read-outputs:
     name: Read the outpus generated on the workflow
     needs: use-inputs
