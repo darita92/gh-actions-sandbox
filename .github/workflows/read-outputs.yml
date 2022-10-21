@@ -14,5 +14,5 @@ jobs:
     steps:
     - name: Print Output Values
       run: |
-        echo '${{ github.event.inputs.randomString }}'
-        echo '${{ github.event.inputs.reversedString }}'
+        echo '${{ inputs.randomString }}'
+        echo '${{ inputs.reversedString }}'
