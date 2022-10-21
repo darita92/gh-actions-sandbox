@@ -9,4 +9,4 @@ jobs:
     - name: Print Output Values
       run: |
         echo '${{ needs.output-values.outputs.randomString }}'
-        echo '${{ needs.output-values.outputs.reversedString }}'
+        echo '${{ needs.use-inputs.outputs.reversedString }}'

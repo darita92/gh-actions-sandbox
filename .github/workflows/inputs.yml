@@ -1,6 +1,9 @@
 name: Input Values
 on:
   workflow_call:
+    outputs:
+      reversedString: 
+        value: ${{ jobs.reverse-string.outputs.randomString }}
   workflow_dispatch:
     inputs:
       message:
