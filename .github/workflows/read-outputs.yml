@@ -14,5 +14,5 @@ jobs:
     steps:
     - name: Print Output Values
       run: |
-        echo '${{ inputs.randomString }}'
-        echo '${{ inputs.reversedString }}'
+        echo '${{ needs.output-values.outputs.randomString }}'
+        echo '${{ needs.use-inputs.outputs.reversedString }}'
