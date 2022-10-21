@@ -4,7 +4,7 @@ on:
     outputs:
       reversedString: 
         description: "The Reversed string"
-        value: ${{ jobs.reverse-string.outputs.randomString }}
+        value: ${{ jobs.reverse-string.outputs.reversedString }}
   workflow_dispatch:
     inputs:
       message:
@@ -16,7 +16,7 @@ jobs:
   reverse-string:
     runs-on: ubuntu-latest
     outputs:
-      reversedString: ${{ steps.reverse.outputs.randomString }}
+      reversedString: ${{ steps.reverse.outputs.reversedString }}
     steps:
     - run: |
         echo "reversedString=$(echo '${{ github.event.inputs.message }}' | rev)" >> $GITHUB_OUTPUT
