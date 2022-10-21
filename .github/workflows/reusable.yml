@@ -21,4 +21,7 @@ jobs:
     name: Read the outpus generated on the workflow
     needs: use-inputs
     uses: ./.github/workflows/read-outputs.yml
+    with:
+      randomString: ${{ needs.output-values.outputs.randomString }}
+      reversedString: ${{ needs.use-inputs.outputs.reversedString }}
   
