@@ -11,6 +11,8 @@ jobs:
     outputs:
       randomString: ${{ steps.generate.outputs.randomString }}
     steps:
-    - run: echo "randomString=$(echo $RANDOM | md5sum | head -c 20)" >> $GITHUB_OUTPUT
+    - run: |
+        echo "randomString=$(echo $RANDOM | md5sum | head -c 20)" >> $GITHUB_OUTPUT
+        echo $RANDOM | md5sum | head -c 20
       name: Generate Random String
       id: generate

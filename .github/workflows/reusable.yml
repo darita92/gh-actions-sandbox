@@ -21,5 +21,4 @@ jobs:
     name: Read the outpus generated on the workflow
     needs: use-inputs
     uses: ./.github/workflows/read-outputs.yml
-
   
