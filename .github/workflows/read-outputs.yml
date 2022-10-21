@@ -1,0 +1,12 @@
+name: Read Outputs
+on:
+  workflow_call:
+
+jobs:
+  print-outputs:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Print Output Values
+      run: |
+        echo '${{ needs.output-values.outputs.randomString }}'
+        echo '${{ needs.output-values.outputs.reversedString }}'
