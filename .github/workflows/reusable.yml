@@ -24,4 +24,5 @@ jobs:
     with:
       randomString: ${{ needs.output-values.outputs.randomString }}
       reversedString: ${{ needs.use-inputs.outputs.reversedString }}
+    secrets: inherit
   
