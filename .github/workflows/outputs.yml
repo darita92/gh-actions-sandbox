@@ -1,0 +1,13 @@
+name: Output Values
+on:
+  workflow_call:
+
+jobs:
+  random-string:
+    runs-on: ubuntu-latest
+    outputs:
+      randomString: ${{ steps.generate.outputs.randomString }}
+    steps:
+    - run: echo "randomString=$(echo $RANDOM | md5sum | head -c 20)" >> $GITHUB_OUTPUT
+      name: Generate Random String
+      id: generate

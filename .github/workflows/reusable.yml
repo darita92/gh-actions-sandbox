@@ -1,0 +1,15 @@
+name: Reusable Workflow
+on:
+  workflow_dispatch:
+    inputs:
+      message:
+        description: Any Message you want to send
+        required: false
+        default: hello world
+
+jobs:
+  output-values:
+    name: Get Output Values
+    uses: ./.github/workflows/outputs.yml
+
+  
