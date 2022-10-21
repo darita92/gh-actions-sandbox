@@ -3,6 +3,7 @@ on:
   workflow_call:
     outputs:
       reversedString: 
+        description: "The Reversed string"
         value: ${{ jobs.reverse-string.outputs.randomString }}
   workflow_dispatch:
     inputs:

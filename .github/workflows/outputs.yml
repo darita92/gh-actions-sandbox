@@ -2,7 +2,8 @@ name: Output Values
 on:
   workflow_call:
     outputs:
-      randomString: 
+      randomString:
+        description: "Random generated string"
         value: ${{ jobs.random-string.outputs.randomString }}
 
 jobs:
