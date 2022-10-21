@@ -12,4 +12,9 @@ jobs:
     name: Get Output Values
     uses: ./.github/workflows/outputs.yml
 
+  use-inputs:
+    name: Use Caller inputs
+    needs: output-values
+    uses: ./.github/workflows/inputs.yml
+
   

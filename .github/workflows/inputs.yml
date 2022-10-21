@@ -1,0 +1,19 @@
+name: Input Values
+on:
+  workflow_call:
+  workflow_dispatch:
+    inputs:
+      message:
+        description: Any Message you want to send
+        required: false
+        default: hello world
+
+jobs:
+  reverse-string:
+    runs-on: ubuntu-latest
+    outputs:
+      reversedString: ${{ steps.reverse.outputs.randomString }}
+    steps:
+    - run: echo "reversedString=$(echo '${{ github.event.inputs.message }} ' | rev)" >> $GITHUB_OUTPUT
+      name: Reverse the String
+      id: reverse
